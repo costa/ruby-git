@@ -37,7 +37,8 @@ class TestStashes < Test::Unit::TestCase
 
       assert(g.status.added.assoc('test-file1'))
 
-      g.branch.stashes.save('testing-stash-all')
+      # NOTE colon is important here
+      g.branch.stashes.save('testing: stash-all')
 
       stashes = g.branch.stashes.all
 

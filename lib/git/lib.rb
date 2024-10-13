@@ -1134,7 +1134,7 @@ module Git
       if File.exist?(filename)
         File.open(filename) do |f|
           f.each_with_index do |line, i|
-            m = line.match(/:(.*)$/)
+            m = line.match(/^[^:]+:(.*)$/)
             arr << [i, m[1].strip]
           end
         end
