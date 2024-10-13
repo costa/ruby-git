@@ -42,7 +42,9 @@ class TestStashes < Test::Unit::TestCase
 
       stashes = g.branch.stashes.all
 
-      assert(stashes[0].include?('testing-stash-all'))
+      assert(stashes[0].include?('testing: stash-all'))
+
+      # TODO check MISNAMED stash message resilience
     end
   end
 end

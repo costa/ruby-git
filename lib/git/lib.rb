@@ -1135,7 +1135,7 @@ module Git
         File.open(filename) do |f|
           f.each_with_index do |line, i|
             m = line.match(/^[^:]+:(.*)$/)
-            arr << [i, m[1].strip]
+            arr << [i, (m ? m[1].strip : "MISNAMED")]
           end
         end
       end
